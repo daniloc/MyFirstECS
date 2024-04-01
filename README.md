@@ -1,6 +1,6 @@
 # My First ECS: A five minute intro to Entity Component System for visionOS
 
-If you are, as I am, new to building 3D software, you may be scratching your head at the ECS design pattern in RealityKit for visionOS.
+In learning to build for visionOS, I spent a lot of time scratching my head at the [ECS design pattern](https://developer.apple.com/documentation/visionOS/understanding-the-realitykit-modular-architecture) in RealityKit. This project is the crash course I wish I'd had.
 
 My First ECS is a five minute dive with:
 
@@ -51,4 +51,4 @@ Drill into `Packages > RealityKitContent > Sources > RealityKitContent` to see t
 
 Issues and PRs are welcome. This is technically my _third_ ECS exploration since Vision Pro delivered, I'm sure there are ways to improve.
 
-Want help with a visionOS project? [Hit me up](https://visionprototypes.com).
+**Want help with a visionOS project? [Hit me up](https://visionprototypes.com).**
