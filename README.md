@@ -53,7 +53,7 @@ Issues and PRs are welcome. This is technically my _third_ ECS exploration since
 
 ## More visionOS projects
 
-[PlanePlopper](https://github.com/daniloc/PlanePlopper): 3 method API for persistently anchoring entities to WorldAnchors.
+[PlanePlopper](https://github.com/daniloc/PlanePlopper): 3 method API for persistently attaching entities to WorldAnchors.
 
 [GeometryLink](https://github.com/daniloc/GeometryLink): Stream a Blender mesh to Vision Pro and play with it.
 
