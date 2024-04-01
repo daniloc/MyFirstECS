@@ -51,4 +51,10 @@ Drill into `Packages > RealityKitContent > Sources > RealityKitContent` to see t
 
 Issues and PRs are welcome. This is technically my _third_ ECS exploration since Vision Pro delivered, I'm sure there are ways to improve.
 
+## More visionOS projects
+
+[PlanePlopper](https://github.com/daniloc/PlanePlopper): 3 method API for persistently anchoring entities to WorldAnchors.
+
+[GeometryLink](https://github.com/daniloc/GeometryLink): Stream a Blender mesh to Vision Pro and play with it.
+
 **Want help with a visionOS project? [Hit me up](https://visionprototypes.com).**
