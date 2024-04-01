@@ -31,7 +31,7 @@ entity.components.set(component)
 
 Components let you attach state and configuration data to an entity. They're flexible, developer-defined context, but you have to use types that are serializable for editing in Reality Composer Pro, or you'll run into trouble. Think of components as elaborate tags. They make it easy for systems to find entities that are relevant to them.
 
-**[Systems](https://developer.apple.com/documentation/realitykit/system)** are run on every frame. Use an `EntityQuery` to find entities that are relevant to a system. Use data stored in an entity's components to determine when and how to act on a given entity.
+**[Systems](https://developer.apple.com/documentation/realitykit/system)** are run on every frame. Use an `EntityQuery` to find entities that are relevant to a system. Systems use data stored in an entity's components to determine when and how to act on a given entity.
 
 By reusing components across entities, you can allow systems to act upon arbitrary numbers of entities, gaining complex behavior from a simple set of ingredients.
 
@@ -41,9 +41,11 @@ Three toy rockets each have a `LaunchComponent` with a different `thrustForce` v
 
 After three seconds, the rockets are reset.
 
-Drill into `Packages> RealityKitContent> Sources> RealityKitContent` to see the most interesting files.
+Drill into `Packages > RealityKitContent > Sources > RealityKitContent` to see the most interesting files:
 
-(boy I hope they simplify that structure for visionOS 2.0)
+<img width="256" alt="Screenshot 2024-04-01 at 1 44 12 PM" src="https://github.com/daniloc/MyFirstECS/assets/213358/6ab59fb0-4a2e-462a-9372-d0016c3dad5f">
+
+(boy I hope they simplify that structure in visionOS 2.0)
 
 ## Issues?
 
