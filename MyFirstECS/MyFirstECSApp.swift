@@ -6,9 +6,19 @@
 //
 
 import SwiftUI
+import RealityKitContent
 
 @main
 struct MyFirstECSApp: App {
+    
+    init() {
+        
+        //Components and systems must be registered:
+        
+        LaunchComponent.registerComponent()
+        LaunchSystem.registerSystem()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

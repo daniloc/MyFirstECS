@@ -13,6 +13,8 @@
 		1F93F32D2BBAF74D00D76596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F93F32C2BBAF74D00D76596 /* Assets.xcassets */; };
 		1F93F3302BBAF74D00D76596 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F93F32F2BBAF74D00D76596 /* Preview Assets.xcassets */; };
 		1F93F33B2BBAF74D00D76596 /* MyFirstECSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93F33A2BBAF74D00D76596 /* MyFirstECSTests.swift */; };
+		1FCDF8212BBB1BFD008D4E0A /* Sunlight.skybox in Resources */ = {isa = PBXBuildFile; fileRef = 1FCDF81E2BBB1BFD008D4E0A /* Sunlight.skybox */; };
+		1FCDF8232BBB1D52008D4E0A /* Entity+Sunlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDF8222BBB1D52008D4E0A /* Entity+Sunlight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		1F93F3312BBAF74D00D76596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F93F3362BBAF74D00D76596 /* MyFirstECSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFirstECSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F93F33A2BBAF74D00D76596 /* MyFirstECSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirstECSTests.swift; sourceTree = "<group>"; };
+		1FCDF81E2BBB1BFD008D4E0A /* Sunlight.skybox */ = {isa = PBXFileReference; lastKnownFileType = file.skybox; path = Sunlight.skybox; sourceTree = "<group>"; };
+		1FCDF8222BBB1D52008D4E0A /* Entity+Sunlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entity+Sunlight.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				1F93F3232BBAF74B00D76596 /* MyFirstECS */,
+				1FCDF81F2BBB1BFD008D4E0A /* Resources */,
 				1F93F3242BBAF74B00D76596 /* Packages */,
 				1F93F3392BBAF74D00D76596 /* MyFirstECSTests */,
 				1F93F3222BBAF74B00D76596 /* Products */,
@@ -81,6 +86,7 @@
 				1F93F3282BBAF74B00D76596 /* MyFirstECSApp.swift */,
 				1F93F32A2BBAF74B00D76596 /* ContentView.swift */,
 				1F93F32C2BBAF74D00D76596 /* Assets.xcassets */,
+				1FCDF8222BBB1D52008D4E0A /* Entity+Sunlight.swift */,
 				1F93F3312BBAF74D00D76596 /* Info.plist */,
 				1F93F32E2BBAF74D00D76596 /* Preview Content */,
 			);
@@ -109,6 +115,14 @@
 				1F93F33A2BBAF74D00D76596 /* MyFirstECSTests.swift */,
 			);
 			path = MyFirstECSTests;
+			sourceTree = "<group>";
+		};
+		1FCDF81F2BBB1BFD008D4E0A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1FCDF81E2BBB1BFD008D4E0A /* Sunlight.skybox */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +211,7 @@
 			files = (
 				1F93F3302BBAF74D00D76596 /* Preview Assets.xcassets in Resources */,
 				1F93F32D2BBAF74D00D76596 /* Assets.xcassets in Resources */,
+				1FCDF8212BBB1BFD008D4E0A /* Sunlight.skybox in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FCDF8232BBB1D52008D4E0A /* Entity+Sunlight.swift in Sources */,
 				1F93F32B2BBAF74B00D76596 /* ContentView.swift in Sources */,
 				1F93F3292BBAF74B00D76596 /* MyFirstECSApp.swift in Sources */,
 			);
