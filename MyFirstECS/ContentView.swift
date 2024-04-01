@@ -52,13 +52,7 @@ struct ContentView: View {
         //Note this recursive find function is defined in the RealityKitContent ConvenienceExtensions file and has not been performance profiled. A production application may way to find more direct ways to grab the relevant entities.
         
         launchableEntities?.forEach { entity in
-            guard var component = entity.components[LaunchComponent.self] else {
-                return
-            }
-            
-            component.launchInitiated = true
-            
-            entity.components.set(component)
+            entity.components[LaunchComponent.self]?.launchInitiated = true
         }
     }
 }
