@@ -19,15 +19,7 @@ Hope this helps on your adventures!
 
 **[Entities](https://developer.apple.com/documentation/realitykit/entity)** are objects that exist in 3D space. They can be positioned, they can have children, they can have parents. Sprawling hierchies of entities may be part of your RealityKit scene, analogous to view hierarchies in AppKit/UIKit. They *may* render to the screen, or they may act as invisible containers for other entities.
 
-**[Components](https://developer.apple.com/documentation/realitykit/component)** are structs that attach to entities. Entities can have arbitrary numbers of components, but only one per _type_ of component. Components are managed in a set, and modifying them right now is a little clunky, for example:
-
-```swift
-var component = entity.components[LaunchComponent.self]
-
-component.launchInitiated = true
-
-entity.components.set(component)
-```
+**[Components](https://developer.apple.com/documentation/realitykit/component)** are structs that attach to entities. Entities can have arbitrary numbers of components, but only one per _type_ of component.
 
 Components let you attach state and configuration data to an entity. They're flexible, developer-defined context, but you have to use types that are serializable for editing in Reality Composer Pro, or you'll run into trouble. Think of components as elaborate tags. They make it easy for systems to find entities that are relevant to them.
 
