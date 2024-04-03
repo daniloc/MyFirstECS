@@ -15,6 +15,45 @@ public class LaunchSystem: System {
     // Initializer is required. Use an empty implementation if there's no setup needed.
     public required init(scene: Scene) { }
     
+    // Iterate through all entities containing a LaunchComponent:
+    public func update(context: SceneUpdateContext) {
+        
+        context.scene.performQuery(Self.query).forEach { launchableEntity in
+            
+            guard var launchComponent = launchableEntity.components[LaunchComponent.self],
+                  let model = launchableEntity.findModelEntity()
+            else {
+                return
+            }
+            
+            if launchComponent.launchInitiated == true,
+               launchComponent.timeLaunched == 0 {
+                
+                //^ Only launch if we don't have a timestamp and the entity has been marked for launch
+                
+                launch(model, parent: launchableEntity, launchComponent: launchComponent)
+                
+            }
+            
+            //If it's been more than three seconds since launch, return the rocket and reset:
+            
+            else if launchComponent.timeLaunched.intervalToNow > 3 {
+                
+                
+                launchComponent.timeLaunched = 0
+                launchComponent.launchInitiated = false
+                
+                model.position = .zero
+                model.clearForcesAndTorques()
+                model.resetPhysicsTransform()
+                model.physicsBody = nil //Despite the above, fully reseting physics requires moving the physicsBody. Please PR if you find a better approach.
+                
+                launchableEntity.components.set(launchComponent)
+                
+            }
+        }
+    }
+    
     /// Configure and launch a model entity, updating its components as needed
     /// - Parameters:
     ///   - model: A model entity
@@ -49,43 +88,6 @@ public class LaunchSystem: System {
         //Update the component and re-attach it to the parent
         var launchComponent = launchComponent
         launchComponent.timeLaunched = Date.nowToDouble()
-        parent.components.set(launchComponent)
-    }
-    
-    // Iterate through all entities containing a LaunchComponent:
-    public func update(context: SceneUpdateContext) {
-        
-        context.scene.performQuery(Self.query).forEach { launchableEntity in
-            
-            guard var launchComponent = launchableEntity.components[LaunchComponent.self],
-                  let model = launchableEntity.findModelEntity()
-            else {
-                return
-            }
-            
-            if launchComponent.launchInitiated == true,
-               launchComponent.timeLaunched == 0 {
-                
-                launch(model, parent: launchableEntity, launchComponent: launchComponent)
-                
-            }
-            
-            //If it's been more than three seconds since launch, return the rocket and reset:
-            
-            else if launchComponent.timeLaunched.intervalToNow > 3 {
-                
-                
-                launchComponent.timeLaunched = 0
-                launchComponent.launchInitiated = false
-                
-                model.position = .zero
-                model.clearForcesAndTorques()
-                model.resetPhysicsTransform()
-                model.physicsBody = nil //Despite the above, fully reseting physics requires moving the physicsBody. Please PR if you find a better approach.
-                
-                launchableEntity.components.set(launchComponent)
-                
-            }
-        }
+        parent.components[LaunchComponent.self]?.timeLaunched = Date.nowToDouble()
     }
 }
